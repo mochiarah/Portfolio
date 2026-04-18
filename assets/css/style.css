@@ -259,10 +259,29 @@ header.hero span {
     flex-direction: column;
     justify-content: center;
     transition: 0.25s;
+    position: relative;
+    cursor: pointer;
 }
 
 .skill-badge:hover {
     box-shadow: 0 0 15px rgb(95,110,97);
+}
+
+
+.skill-badge::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.skill-badge.active::after {
+    transform: translateY(-150%) rotate(180deg);
+    opacity: 1;
 }
 
 .inner-pills {
